@@ -1,0 +1,11 @@
+appspec.yml
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/myapp
+hooks:
+  BeforeInstall:
+    - location: scripts/stop_app.sh
+  AfterInstall:
+    - location: scripts/start_app.sh
